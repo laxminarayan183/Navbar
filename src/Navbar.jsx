@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -15,8 +16,22 @@ const Navbar = () => {
         </div>
         <div className="list">
           <ul>
-            <li>Home</li>
-            <li>About</li>
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) => `${isActive ? "red" : "blue"}`}
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/about"
+                className={({ isActive }) => `${isActive ? "red" : "blue"}`}
+              >
+                About
+              </NavLink>
+            </li>
             <li>Contact</li>
             <li>Service</li>
           </ul>
